@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: FX Minds Students
- * Plugin URI: https://mmc-itsolutions.nl/
+ * Plugin URI: https://github.com/mmc-it-solutions/fxminds-students
  * Description: A custom plugin to be more productive with their students.
- * Version: 0.2
+ * Version: 0.2.1
  * Author: MMC IT Solutions
  * Author URI: https://mmc-itsolutions.nl/
  */
@@ -12,29 +12,28 @@ if( ! defined('ABSPATH')){
 	die();
 }
 
-add_action( 'admin_menu', 'my_admin_menu' );
-
-wp_enqueue_style( 'fxminds-main', plugin_dir_url( __FILE__ ) . 'assets/css/fxminds.css' );
-
-function fxminds_admin_index(){
-	wp_enqueue_style( 'fxminds-admin', plugin_dir_url( __FILE__ ) . 'assets/css/fxminds-admin.css' );
-	require_once plugin_dir_path(__FILE__).'admin/fxminds-admin.php';	
+if(file_exists(dirname(__FILE__). '/vendor/autoload.php')){
+	require_once dirname(__FILE__). '/vendor/autoload.php';
 }
 
-function fxminds_admin_lesson_questions(){
-	require_once plugin_dir_path(__FILE__).'admin/fxminds-admin-lesson-questions.php';
-	//wp_enqueue_style( 'fxminds-admin', plugin_dir_url( __FILE__ ) . 'assets/css/fxminds-admin-lesson.css' );
+define ('PLUGIN_PATH', plugin_dir_path(__FILE__));
+define ('PLUGIN_URL', plugin_dir_url(__FILE__));
+define ('PLUGIN_NAME', plugin_basename(__FILE__));
+
+use Includes\Base\Activate;
+use Includes\Base\Deactivate;
+
+function activate_fxminds(){
+	Activate::activate();
 }
 
-function fxminds_admin_questions_asked(){
-	require_once plugin_dir_path(__FILE__).'admin/fxminds-admin-qa.php';
-	//wp_enqueue_style( 'fxminds-admin', plugin_dir_url( __FILE__ ) . 'assets/css/fxminds-admin-lesson.css' );
+function deactivate_fxminds(){
+	Deactivate::deactivate();
 }
 
+register_activation_hook(__FILE__, 'activate_fxminds');
+register_deactivation_hook(__FILE__, 'deactivate_fxminds');
 
-function my_admin_menu() {
-	add_menu_page( 'FXMINDS STUDENTS', 'FXMinds students', 'manage_options', 'fxminds_admin_index', 'fxminds_admin_index', 'dashicons-tickets', 1  );
-	add_submenu_page('fxminds_admin_index', 'Verdieping', 'Verdiepingen', 'manage_options', 'fxminds_verdieping', 'fxminds_admin_lesson_questions');
-	add_submenu_page('fxminds_admin_index', 'Q&A', 'Q&A Vragen', 'manage_options', 'fxminds_qa', 'fxminds_admin_questions_asked');
+if( class_exists('Includes\\Init')){
+	Includes\Init::register_services();
 }
-
