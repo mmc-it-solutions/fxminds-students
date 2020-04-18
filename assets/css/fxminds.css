@@ -1,0 +1,89 @@
+:root {
+  --fxminds-lightgreen: #0df382;
+  --fxminds-darkgreen: #37caa4;
+  --fxminds-black: #1e272e;
+}
+
+.fxminds-admin header {
+  text-align: center;
+}
+
+.fxminds-admin h1 {
+  margin-bottom: 1em;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.fxminds-admin h1 span {
+  display: inline-block;
+  font-size: 0.5em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  background: var(--fxminds-lightgreen);
+  text-align: center;
+  border-radius: 1em;
+}
+.fxminds-filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.fxminds-filters button {
+  width: 27.5%;
+  background: var(--fxminds-darkgreen);
+  color: white;
+  font-size: 1.25em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: unset;
+  border-radius: 0.25em;
+}
+
+@media (min-width: 768px) {
+  body .fxminds-admin {
+    font-size: 18px;
+  }
+  .fxminds-filters {
+    justify-content: left;
+  }
+  .fxminds-filters button {
+    width: unset;
+    margin-left: 1em;
+    padding: 0.5em 1.25em;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fxminds-admin h1 {
+    margin-bottom: 0.5em;
+  }
+  .fxminds-filters button {
+    width: unset;
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 1200px) {
+  body .fxminds-admin {
+    font-size: 20px;
+  }
+  .fxminds-admin header {
+    text-align: left;
+  }
+  .fxminds-filters button {
+    cursor: pointer;
+    padding: 0.5em 1.5em;
+    transition: background-color 0.3s ease;
+    outline: none;
+  }
+  .fxminds-filters button:hover {
+    background-color: #4db397;
+  }
+}
