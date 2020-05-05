@@ -10,6 +10,7 @@ namespace Includes;
     public static function get_services(){
         return [
             Base\SettingsLinks::class,
+            Base\Shortcode::class,
             Base\Enqueue::class,
             Pages\Admin::class
         ];

@@ -37,3 +37,4 @@ register_deactivation_hook(__FILE__, 'deactivate_fxminds');
 if( class_exists('Includes\\Init')){
 	Includes\Init::register_services();
 }
+
