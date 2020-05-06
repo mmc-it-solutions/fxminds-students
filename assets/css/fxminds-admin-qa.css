@@ -1,0 +1,33 @@
+.fxminds-table .table-head {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  font-weight: 400;
+  padding: 15px 10px;
+  border-bottom: 4px solid var(--fxminds-darkgreen);
+  border-radius: 2px 2px 0 0;
+  color: white;
+  background-color: var(--fxminds-black);
+}
+.fxminds-table .table-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 10px;
+  min-height: 40px;
+  transition: 300ms ease-in-out;
+  background-color: #fefefe;
+  margin-top: 10px;
+  box-shadow: -3px -3px 6px white, 3px 3px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+}
+.fxminds-table .table-row div {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+.fxminds-table.questions .table-head {
+  grid-template-columns: 1.5fr 1.5fr 2fr 1fr 1fr;
+}
+.fxminds-table.questions .table-row {
+  grid-template-columns: 1.5fr 1.5fr 2fr 1fr 1fr;
+}

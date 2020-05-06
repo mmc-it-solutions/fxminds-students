@@ -3,5 +3,5 @@
 
     <h1>FXMinds Students<span>Q&A vragen</span></h1>
 </header>
-    verzin hier nog iets op.
+    verzin hier nog iets op. 2x
 </div>
