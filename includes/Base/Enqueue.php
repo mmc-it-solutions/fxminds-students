@@ -16,6 +16,7 @@ namespace Includes\Base;
 
     function enqueue(){
 		wp_enqueue_style( 'fxminds-main', PLUGIN_URL . 'assets/css/fxminds.css' );
-		wp_enqueue_style( 'fxminds-admin', PLUGIN_URL . 'assets/css/fxminds-admin.css' );
+    wp_enqueue_style( 'fxminds-admin', PLUGIN_URL . 'assets/css/fxminds-admin.css' );
+    wp_enqueue_style( 'fxminds-admin-qa', PLUGIN_URL . 'assets/css/fxminds-admin-qa.css' );
 	}
  }

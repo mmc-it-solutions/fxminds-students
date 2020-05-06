@@ -3,7 +3,7 @@
  * Plugin Name: FX Minds Students
  * Plugin URI: https://github.com/mmc-it-solutions/fxminds-students
  * Description: A custom plugin to be more productive with their students.
- * Version: 0.2.1
+ * Version: 0.2.2
  * Author: MMC IT Solutions
  * Author URI: https://mmc-itsolutions.nl/
  */
